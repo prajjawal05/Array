@@ -1,0 +1,24 @@
+#include<stdio.h>
+void main()
+{
+    int x=11, s=10, i,l,h;
+    int c[11]={0};
+    int marks[s];
+    for(i=0;i<10;i++)
+    {
+        scanf("%d", &marks[i]);
+        c[(int)marks[i]/10]++;
+    }
+    printf("Range\tFrequency");
+    for(i=0;i<11;i++)
+    {
+        l=i*10;
+        if(i==10)
+            h=100;
+        else
+            h=l+9;
+        printf("%d to %d\t%d\n",l,h,c[i]);
+    }
+}
+
+
