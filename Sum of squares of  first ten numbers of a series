@@ -1,0 +1,13 @@
+#include<stdio.h>
+void main()
+{
+  float a[10],s=0;
+  int i;
+  printf("Enter first ten terms of a sequence\n");
+  for(i=0;i<10;i++)
+  {
+    scanf("%f", &a[i]);
+    s=s+a[i]*a[i];
+  }
+  printf("%f", s);
+}
