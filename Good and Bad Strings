@@ -1,0 +1,46 @@
+//Bad String if character is repeated
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
+{
+    char a[100];
+    gets(a);
+    int  flag=0;
+    int l=strlen(a);
+    int i, c[100],j=0;
+    for(i=0;i<l-1;i++)
+    {
+        if (a[i]==a[i+1])
+           {
+               flag++;
+               c[j]=i+1;
+               j++;
+           }
+    }
+    if (flag==0)
+        printf("Good String");
+    else
+    {
+        printf("Bad String\n");
+        char p[l];
+        for(i=0;i<l;i++)
+        {
+            static int j=0;
+            if(c[j]==i+1)
+            {
+                p[i]="";
+                j++;
+            }
+            else
+                p[i]=a[i];
+        }
+        for(i=0;i<l;i++)
+        {
+            int q;
+            q=p[i];
+            if((q>64&&q<91)||(q>96&&q<123))
+                printf("%c", p[i]);
+        }
+    }
+}
